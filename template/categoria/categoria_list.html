@@ -1,0 +1,41 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <thead>
+    <tr>
+        <!--<th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for categoria in object_list %}
+        <tr>
+           <!-- <td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>
+                {{ categoria.nombre }}
+            </td>
+            <td>{{ categoria.descripcion }}</td>
+            <td>
+                 <a href="{% url 'categoria:editar' categoria.id %}" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'categoria:eliminar' categoria.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+</tbody>
+{% endblock %}

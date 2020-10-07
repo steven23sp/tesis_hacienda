@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block conten %}
+    <form method="post" action=".">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-warning btn-sm btn-flat">
+                                <i class="fas fa-sync"></i> Guardar
+                            </button>
+                        </div>
+    </form>
+{% endblock %}

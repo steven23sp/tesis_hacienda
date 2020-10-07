@@ -1,0 +1,43 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <thead>
+    <tr>
+        <!--<th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Fecha Asignacion</th>
+        <th>Empleado</th>
+        <th>Tipo</th>
+        <th>Observacion</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for asig_eq_maq in object_list %}
+        <tr>
+            <!--<td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>{{ asig_eq_maq.fecha_asig }}</td>
+            <td>{{ asig_eq_maq.empleado}}</td>
+            <td>{{ asig_eq_maq.equipo_maquinaria }}</td>
+            <td>{{ asig_eq_maq.observacion }}</td>
+            <td>
+                <a href="{% url 'asignacion_ep_maq:editar' asig_eq_maq.id %}" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'asignacion_ep_maq:eliminar' asig_eq_maq.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+</tbody>
+{% endblock %}

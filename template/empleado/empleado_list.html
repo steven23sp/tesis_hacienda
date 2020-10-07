@@ -1,0 +1,55 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <thead>
+    <tr>
+        <!--<th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Cedula</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Estado Civil</th>
+        <th>E.Primaria</th>
+        <th>E. Secundaria</th>
+        <th>E. Superior</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for empleado in object_list %}
+        <tr>
+           <!-- <td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>{{ empleado.cedula }}</td>
+            <td>{{ empleado.nombres }}</td>
+            <td>{{ empleado.apellidos }}</td>
+            <td>{{ empleado.correo }}</td>
+            <td>{{ empleado.telefono }}</td>
+            <td>{{ empleado.direccion }}</td>
+            <td>{{ empleado.get_estado_civil_display}}</td>
+            <td>{{ empleado.educ_primaria }}</td>
+            <td>{{ empleado.educ_secundaria }}</td>
+            <td>{{ empleado.educ_superior }}</td>
+            <td>
+                <a href="{% url 'empleado:editar_empleado' empleado.id %}" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'empleado:eliminar_empleado' empleado.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+</tbody>
+{% endblock %}

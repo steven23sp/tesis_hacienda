@@ -1,0 +1,46 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <form method="post" action=".">
+    <thead>
+    <tr>
+       <!-- <th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Id</th>
+        <th>Empleado</th>
+        <th>Marcar</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+           <!-- <td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>{{ form.id_empleado }}</td>
+            <td>{{ form.empleado}}</td>
+            <td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td>
+            <td>
+                 <a href="#" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="#" type="button" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+
+
+</tbody>
+    </form>
+{% endblock %}

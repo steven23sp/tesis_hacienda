@@ -1,0 +1,47 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <thead>
+    <tr>
+       <!-- <th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Razon Social </th>
+        <th>Nombre</th>
+        <th>N. Documento</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Direccion</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for proveedor in object_list %}
+        <tr>
+           <!-- <td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>{{ proveedor.razon_social }}</td>
+            <td>{{ proveedor.nombres }}</td>
+            <td>{{ proveedor.numero_doc }}</td>
+            <td>{{ proveedor.correo }}</td>
+            <td>{{ proveedor.telefono }}</td>
+            <td>{{ proveedor.direccion }}</td>
+            <td>
+                <a href="{% url 'proveedor:editar' proveedor.id %}" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'proveedor:eliminar' proveedor.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+</tbody>
+{% endblock %}

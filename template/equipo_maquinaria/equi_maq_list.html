@@ -1,0 +1,43 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <thead>
+    <tr>
+        <!--<th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Descripcion</th>
+        <th>Fecha Ingreso</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for equipo_maquinaria in object_list %}
+        <tr>
+            <!--<td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>{{ equipo_maquinaria.nombre }}</td>
+            <td>{{ equipo_maquinaria.get_tipo_display}}</td>
+            <td>{{ equipo_maquinaria.descripcion }}</td>
+            <td>{{ equipo_maquinaria.fecha_registro }}</td>
+            <td>
+                <a href="{% url 'equipo_maquinaria:editar_equipo_maquinaria' equipo_maquinaria.id %}" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'equipo_maquinaria:eliminar_equipo_maquinaria' equipo_maquinaria.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+</tbody>
+{% endblock %}

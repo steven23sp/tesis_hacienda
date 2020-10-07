@@ -1,0 +1,42 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <thead>
+    <tr>
+       <!-- <th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Nombre </th>
+        <th>Descripcion</th>
+        <th>Valor de la Labor</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for labor in object_list %}
+        <tr>
+           <!-- <td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>{{ labor.nombre }}</td>
+            <td>{{ labor.descripcion }}</td>
+            <td>{{ labor.valor_dia }}</td>
+
+            <td>
+                <a href="{% url 'labor:editar' labor.id %}" class="btn btn-warning btn-xs btn-flat">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <a href="{% url 'labor:eliminar' labor.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+</tbody>
+{% endblock %}
