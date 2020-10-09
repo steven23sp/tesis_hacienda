@@ -44,6 +44,26 @@
             </div>
         </div>
         <div class="col-lg-3 col-6">
+            <div class="card card-orange collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Asistencia</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <a href="{% url 'asistencia:crear' %}" class="fa fa-plus"> Asistencias</a>
+                    <a href="{% url 'asistencia:lista' %}" class="fa fa-table"> Listado de Asistencias</a>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
             <div class="card card-green collapsed-card">
                 <div class="card-header">
                     <h3 class="card-title">Proveedor</h3>
@@ -57,7 +77,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a href="{% url 'proveedor:crear' %}" class="fa-user-alt" > Nuevo Proveedor</a>
+                    <a href="{% url 'proveedor:crear' %}" class="fa-user-alt"> Nuevo Proveedor</a>
                     <a href="{% url 'proveedor:lista' %}" class="fa fa-table"> Listado de Proveedores</a>
                 </div>
                 <!-- /.card-body -->
@@ -117,11 +137,54 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a href="{% url 'equipo_maquinaria:crear_equipo_maquinaria' %}" class="fa fa-user-alt"> Nuevo Equipo y Maquinaria</a>
-                    <a href="{% url 'equipo_maquinaria:lista_equipo_maquinaria' %}" class="fa fa-table"> Listado de Equipo y Maquinaria</a>
+                    <a href="{% url 'equipo_maquinaria:crear_equipo_maquinaria' %}" class="fa fa-user-alt"> Nuevo Equipo
+                        y Maquinaria</a>
+                    <a href="{% url 'equipo_maquinaria:lista_equipo_maquinaria' %}" class="fa fa-table"> Listado de
+                        Equipo y Maquinaria</a>
                 </div>
                 <!-- /.card-body -->
             </div>
         </div>
+        <div class="col-lg-3 col-6">
+            <div class="card card-yellow collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Labor</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <a href="{% url 'labor:crear' %}" class="fa fa-user-alt"> Nueva Labor</a>
+                    <a href="{% url 'labor:lista' %}" class="fa fa-table"> Listado de Labores</a>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+        <div class="col-lg-3 col-6">
+            <div class="card card-yellow collapsed-card">
+                <div class="card-header">
+                    <h3 class="card-title">Insumo</h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
+                                class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                    <!-- /.card-tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <a href="{% url 'insumo:crear' %}" class="fa fa-user-alt"> Nueva Insumo</a>
+                    <a href="{% url 'insumo:lista' %}" class="fa fa-table"> Listado de Insumos</a>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+
     </div>
 {% endblock %}
