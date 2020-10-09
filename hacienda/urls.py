@@ -24,8 +24,10 @@ from apps.equipo_maquinaria.url import *
 from apps.asignacion_eq_maq.url import *
 from apps.labor.url import *
 from apps.zona.url import *
+from apps import views as views
 urlpatterns = [
     path('admin/', admin.site.urls),
+path('', views.menu, name='index'),
     #empresa
     path('empleado/', include('apps.empleado.url', namespace='empleado')),
     path('cliente/', include('apps.cliente.url', namespace='cliente')),
