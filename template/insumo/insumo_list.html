@@ -1,0 +1,49 @@
+{% extends 'prueba/list2.html' %}
+{% block table %}
+    <thead>
+    <tr>
+        <!--<th class="center">
+            <label class="pos-rel">
+                <input type="checkbox" class="ace"/>
+                <span class="lbl"></span>
+            </label>
+        </th> -->
+        <th>Nombre</th>
+        <th>Categoria</th>
+        <th>Presentacion</th>
+        <th>Descripcion</th>
+        <th>Pvp</th>
+        <th>Stock</th>
+        <th>Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for insumo in object_list %}
+        <tr>
+            <!--<td class="center">
+                <label class="pos-rel">
+                    <input type="checkbox" class="ace"/>
+                    <span class="lbl"></span>
+                </label>
+            </td> -->
+            <td>{{ insumo.nombre }}</td>
+            <td>{{ insumo.categoria }}</td>
+            <td>{{ insumo.presentacion }}</td>
+            <td>{{ insumo.descripcion }}</td>
+            <td>{{ insumo.pvp }}</td>
+            <td>{{ insumo.stock }}</td>
+            <td>
+                <a type="button" class="btn btn-outline-success btn-sm btn-round" data-toggle="tooltip"
+                       title="Editar Datos"
+                       href="{% url 'insumo:editar' insumo.id %}"><i class="fa fa-edit"></i>
+                </a>
+                <a type="button" class="btn btn-outline-danger btn-sm btn-round" data-toggle="tooltip"
+                       title="Eliminar Datos"
+                       href="{% url 'insumo:eliminar' insumo.id %}"><i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+
+        {% endfor %}
+</tbody>
+{% endblock %}

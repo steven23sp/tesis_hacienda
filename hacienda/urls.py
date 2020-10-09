@@ -35,5 +35,6 @@ urlpatterns = [
     path('equi_maqui/', include('apps.equipo_maquinaria.url', namespace='equipo_maquinaria')),
     path('asignacion_equi_maqui/', include('apps.asignacion_eq_maq.url', namespace='asignacion_equipo_maquina')),
     path('labor/', include('apps.labor.url', namespace='labor')),
-    path('zona/', include('apps.zona.url', namespace='zona'))
+    path('zona/', include('apps.zona.url', namespace='zona')),
+    path('insumo/', include('apps.insumo.url', namespace='insumo'))
 ]
