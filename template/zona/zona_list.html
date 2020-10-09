@@ -1,4 +1,5 @@
 {% extends 'prueba/list2.html' %}
+{% load static from staticfiles %}
 {% block table %}
     <thead>
     <tr>
@@ -8,17 +9,16 @@
                 <span class="lbl"></span>
             </label>
         </th> -->
-        <th>Razon Social </th>
+        <th>Id</th>
         <th>Nombre</th>
-        <th>N. Documento</th>
-        <th>Correo</th>
-        <th>Telefono</th>
-        <th>Direccion</th>
+        <th>Dimension</th>
+        <th>Area (m <sup>2</sup>)</th>
+        <th>Estado</th>
         <th>Opciones</th>
     </tr>
     </thead>
     <tbody>
-    {% for proveedor in object_list %}
+    {% for zona in object_list %}
         <tr>
            <!-- <td class="center">
                 <label class="pos-rel">
@@ -26,24 +26,26 @@
                     <span class="lbl"></span>
                 </label>
             </td> -->
-            <td>{{ proveedor.razon_social }}</td>
-            <td>{{ proveedor.nombres }}</td>
-            <td>{{ proveedor.numero_doc }}</td>
-            <td>{{ proveedor.correo }}</td>
-            <td>{{ proveedor.telefono }}</td>
-            <td>{{ proveedor.direccion }}</td>
+            <td>{{ zona.id }}</td>
+            <td>{{ zona.nombre }}</td>
+            <td>{{ zona.get_dimesion_display}}</td>
+            <td>{{ zona.area_total }} (m<sup>2</sup>)</td>
+            <td>{{ zona.get_estado_display}}</td>
             <td>
                 <a type="button" class="btn btn-outline-success btn-sm btn-round" data-toggle="tooltip"
                        title="Editar Datos"
-                       href="{% url 'proveedor:editar' proveedor.id %}"><i class="fa fa-edit"></i>
-                </a>
+                       href="{% url 'zona:editar' zona.id %}"><i class="fa fa-edit"></i></a>
                 <a type="button" class="btn btn-outline-danger btn-sm btn-round" data-toggle="tooltip"
                        title="Eliminar Datos"
-                       href="{% url 'proveedor:eliminar' proveedor.id %}"><i class="fa fa-trash"></i>
-                </a>
+                       href="{% url 'zona:eliminar' zona.id %}"><i class="fa fa-trash"></i></a>
+                 <a rel="estado" type="button" class="btn btn-outline-primary btn-sm btn-round" data-toggle="tooltip"
+                       title="Gestionar Estado" style="color: darkgrey"> <i class="fa fa-cogs"></i></a>
             </td>
         </tr>
 
         {% endfor %}
 </tbody>
+{% endblock %}
+{% block extra %}
+    <script src="{% static 'apps/zona/zona_list.js' %}"></script>
 {% endblock %}

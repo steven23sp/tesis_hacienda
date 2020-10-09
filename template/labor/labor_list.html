@@ -26,13 +26,14 @@
             <td>{{ labor.nombre }}</td>
             <td>{{ labor.descripcion }}</td>
             <td>{{ labor.valor_dia }}</td>
-
             <td>
-                <a href="{% url 'labor:editar' labor.id %}" class="btn btn-warning btn-xs btn-flat">
-                    <i class="fas fa-edit"></i>
+               <a type="button" class="btn btn-outline-success btn-sm btn-round" data-toggle="tooltip"
+                       title="Editar Datos"
+                       href="{% url 'labor:editar' labor.id %}"><i class="fa fa-edit"></i>
                 </a>
-                <a href="{% url 'labor:eliminar' labor.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
-                    <i class="fas fa-trash-alt"></i>
+                <a type="button" class="btn btn-outline-danger btn-sm btn-round" data-toggle="tooltip"
+                       title="Eliminar Datos"
+                       href="{% url 'labor:eliminar' labor.id %}"><i class="fa fa-trash"></i>
                 </a>
             </td>
         </tr>

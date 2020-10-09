@@ -23,6 +23,7 @@ from apps.asistencia.url import *
 from apps.equipo_maquinaria.url import *
 from apps.asignacion_eq_maq.url import *
 from apps.labor.url import *
+from apps.zona.url import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     #empresa
@@ -33,5 +34,6 @@ urlpatterns = [
     path('asistencia/', include('apps.asistencia.url', namespace='asistencia')),
     path('equi_maqui/', include('apps.equipo_maquinaria.url', namespace='equipo_maquinaria')),
     path('asignacion_equi_maqui/', include('apps.asignacion_eq_maq.url', namespace='asignacion_equipo_maquina')),
-    path('labor/', include('apps.labor.url', namespace='labor'))
+    path('labor/', include('apps.labor.url', namespace='labor')),
+    path('zona/', include('apps.zona.url', namespace='zona'))
 ]

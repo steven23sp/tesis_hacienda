@@ -31,11 +31,13 @@
             <td>{{ cliente.telefono }}</td>
             <td>{{ cliente.direccion }}</td>
             <td>
-                <a href="{% url 'cliente:editar' cliente.id %}" class="btn btn-warning btn-xs btn-flat">
-                    <i class="fas fa-edit"></i>
+                <a type="button" class="btn btn-outline-success btn-sm btn-round" data-toggle="tooltip"
+                       title="Editar Datos"
+                       href="{% url 'cliente:editar' cliente.id %}"><i class="fa fa-edit"></i>
                 </a>
-                <a href="{% url 'cliente:eliminar' cliente.id %}" type="button" class="btn btn-danger btn-xs btn-flat">
-                    <i class="fas fa-trash-alt"></i>
+                <a type="button" class="btn btn-outline-danger btn-sm btn-round" data-toggle="tooltip"
+                       title="Eliminar Datos"
+                       href="{% url 'cliente:eliminar' cliente.id %}"><i class="fa fa-trash"></i>
                 </a>
             </td>
         </tr>
