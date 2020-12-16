@@ -51,7 +51,7 @@ class categoria_update(UpdateView):
 class categoria_delete(DeleteView):
     model = categoria
     form_class = categoriaForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('categoria:lista')
 
     def get_context_data(self, **kwargs):

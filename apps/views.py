@@ -6,4 +6,4 @@ def menu(request):
     data = {
         'title': 'Menu Principal', 'entidad': 'Menu Principal'
     }
-    return render(request, 'prueba/index.html', data)
+    return render(request, '../../sistema_yamaha/templates/prueba/index.html', data)

@@ -50,7 +50,7 @@ class empleadao_update(UpdateView):
 class empleadao_delete(DeleteView):
     model = empleado
     form_class = empleadoForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('empleado:lista_empleado')
 
     def get_context_data(self, **kwargs):

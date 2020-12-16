@@ -52,7 +52,7 @@ class zona_update(UpdateView):
 class zona_delete(DeleteView):
     model = zona
     form_class = zonaForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('zona:lista')
 
     def get_context_data(self, **kwargs):

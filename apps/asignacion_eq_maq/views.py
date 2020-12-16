@@ -50,7 +50,7 @@ class asig_eq_maq_update(UpdateView):
 class asig_eq_maq_delete(DeleteView):
     model = asig_eq_maq
     form_class = asig_eq_maqForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('asignacion_ep_maq:lista')
 
     def get_context_data(self, **kwargs):

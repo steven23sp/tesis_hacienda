@@ -50,7 +50,7 @@ class equi_maq_update(UpdateView):
 class equi_maq_delete(DeleteView):
     model = equipo_maquinaria
     form_class = equipo_maquiForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('equipo_maquinaria:lista_equipo_maquinaria')
 
     def get_context_data(self, **kwargs):

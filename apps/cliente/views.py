@@ -50,7 +50,7 @@ class cliente_update(UpdateView):
 class cliente_delete(DeleteView):
     model = cliente
     form_class = clienteForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('cliente:lista')
 
     def get_context_data(self, **kwargs):

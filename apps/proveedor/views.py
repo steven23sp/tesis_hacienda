@@ -50,7 +50,7 @@ class proveedor_update(UpdateView):
 class proveedor_delete(DeleteView):
     model = proveedor
     form_class = proveedorForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('proveedor:lista')
 
     def get_context_data(self, **kwargs):

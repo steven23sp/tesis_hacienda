@@ -50,7 +50,7 @@ class insumo_update(UpdateView):
 class insumo_delete(DeleteView):
     model = insumo
     form_class = insumoForm
-    template_name = 'prueba/form_delete.html'
+    template_name = '../../../sistema_yamaha/templates/prueba/form_delete.html'
     success_url = reverse_lazy('insumo:lista')
 
     def get_context_data(self, **kwargs):
